@@ -8,10 +8,13 @@ module RCaptcha
     def self.generate(captcha_text, width = 100, height = 32)
       image = create_image(width, height)
       draw_text!(captcha_text, image)
-
+      
       image = apply_distortion!(image)
 
-      image.to_blob
+      data = image.to_blob
+      image.destroy!
+
+      return data
     end
 
     private
