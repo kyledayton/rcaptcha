@@ -9,8 +9,7 @@ module RCaptcha
       image = create_image(width, height)
       draw_text!(captcha_text, image)
 
-      image = image.wave *random_wave_distortion
-      image = image.implode random_implode_distortion
+      image = apply_distortion!(image)
 
       image.to_blob
     end
@@ -39,8 +38,16 @@ module RCaptcha
       nil
     end
 
+    def self.apply_distortion!(image)
+      image = image.wave *random_wave_distortion
+      image = image.implode random_implode_distortion
+      image = image.swirl rand(10)
+      image = image.add_noise Magick::ImpulseNoise
+      image
+    end
+
     def self.random_wave_distortion
-      [4 + rand(2), 30 + rand(20)]
+      [4 + rand(2), 40 + rand(20)]
     end
 
     def self.random_implode_distortion
