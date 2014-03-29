@@ -1,6 +1,6 @@
 # RCaptcha
 
-TODO: Write a gem description
+RCaptcha is a simple Ruby library for generating CAPTCHA images.
 
 ## Installation
 
@@ -18,7 +18,12 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Generating CAPTCHA images is easy, simply give it the 'answer' and it will turn it into an image byte string
+
+```ruby
+# Will return a string of bytes
+RCaptcha.generate '29345571'
+```
 
 ## Contributing
 
