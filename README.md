@@ -18,10 +18,10 @@ Or install it yourself as:
 
 ## Usage
 
-Generating CAPTCHA images is easy, simply give it the 'answer' and it will turn it into an image byte string
+Generating CAPTCHA images is easy, simply give it the 'answer' and it will turn it into an image byte string. Image will be encoded in JPEG format.
 
 ```ruby
-# Will return a string of bytes
+# Image will be a distorted version of "29345571"
 RCaptcha.generate '29345571'
 ```
 
