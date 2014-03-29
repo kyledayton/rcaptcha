@@ -24,6 +24,8 @@ Generating CAPTCHA images is easy, simply give it the 'answer' and it will turn 
 # Image will be a distorted version of "29345571"
 RCaptcha.generate '29345571'
 ```
+Will produce something like:
+![Example CAPTCHA](https://raw.github.com/kyledayton/rcaptcha/master/src/doc/captcha.jpg)
 
 ## Contributing
 
